@@ -1,6 +1,7 @@
 import {Routes, RouterModule } from '@angular/router';
 import { PolicyComponent}  from './policy.component';
-import {MainTabComponent} from './maintab.component';
+import { MainTabComponent} from './maintab.component';
+import { SubscriptionComponent} from './subscription.component';
 
 
 const appRoutes: Routes = [
@@ -10,6 +11,14 @@ const appRoutes: Routes = [
 	},
 	{
 		path:'',
+		component:MainTabComponent
+	},
+	{
+		path:'subscription',
+		component:SubscriptionComponent
+	},
+	{
+		path:'home',
 		component:MainTabComponent
 	}
 ];

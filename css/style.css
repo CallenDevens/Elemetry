@@ -27,18 +27,21 @@ body{
 }
  
  
-#tab-home .btn-primary {
+#tab-policy .btn-primary, #tab-subscription .btn-primary {
     background: #A6A6A6;
     color: #ffffff;
     border: 0 none;
     font-weight: 700;
     text-transform: uppercase;
     height:100px;
-    width:250px;
+    width:270px;
     margin:100px 20px;
 }
  
-#tab-home .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open > .dropdown-toggle.btn-primary {
+#tab-policy .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open > .dropdown-toggle.btn-primary {
+    background: #33a6cc;
+}
+#tab-subscription .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open > .dropdown-toggle.btn-primary {
     background: #33a6cc;
 }
  
@@ -124,23 +127,32 @@ input:checked + .slider:before {
     width: 25px;
     height: 25px;
 }
+.checkbox{
+    padding: 5px;
+}
 
-
-#add_group_dialog,#add_sensor_dialog{
-    display: none;
+#add_policy_dialog,#add_sensor_dialog{
+    display:block;
     padding:20px;
     background: white;
     position: absolute;
     top:100px;
     left:600px;
     width:600px;
-
     z-index:10;
-
     border: 1px solid gray;
 }
 
-#add_group_dialog .btn-danger,#add_sensor_dialog .btn-danger{
+#add_policy_dialog .btn-danger,#add_sensor_dialog .btn-danger{
     width: 25px;
     height: 25px;
+}
+
+
+.table tbody tr:hover td, .table tbody tr:hover th {
+    background-color: white;
+}
+
+.create-form {
+    clear:both;
 }

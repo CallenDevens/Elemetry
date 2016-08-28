@@ -1,10 +1,21 @@
 <div id="mainTab" class="container">
     <ul class="nav nav-pills">
         <li class="active">
-            <a href="#tab-home" data-toggle="tab">
+            <a href="#tab-policy" data-toggle="tab">
                 <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
-                HOME
+                POLICY
             </a>
+        </li>
+        <li>
+            <a href="#tab-subscription" data-toggle="tab">
+                <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
+                SUBSCRIPTION
+            </a>
+        </li>
+        <li >
+            <a href="#" data-toggle="tab">
+                <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+                VISUALIZATION</a>
         </li>
         <li >
             <a href="#tab-set-config" data-toggle="tab">
@@ -13,19 +24,34 @@
         </li>
     </ul>
     <div class="tab-content clearfix"> 
-        <div class="tab-pane active" id="tab-home">
+        <div class="tab-pane active" id="tab-policy">
             <div class="container">
                <a href="policy">
                     <button type="button" class="btn btn-primary btn-lg">
-                        <span class=" glyphicon glyphicon-plus" aria-hidden="true"></span>
-                        Create Policy
+                        <span class="glyphicon glyphicon-paperclip" aria-hidden="true"></span>
+                        View Policy
                     </button>  
                 </a>                      
                 <button type="button" class="btn btn-primary btn-lg raised">
                     <span class=" glyphicon glyphicon-equalizer" aria-hidden="true"></span>
-                    Data Visualization</button>
+                    Apply Policy</button>
             </div>
         </div>
+
+        <div class="tab-pane" id="tab-subscription">
+            <div class="container">
+               <a href="subscription">
+                    <button type="button" class="btn btn-primary btn-lg">
+                        <span class="glyphicon glyphicon-paperclip" aria-hidden="true"></span>
+                        View Subscriptions
+                    </button>  
+                </a>                      
+                <button type="button" class="btn btn-primary btn-lg raised">
+                    <span class=" glyphicon glyphicon-equalizer" aria-hidden="true"></span>
+                    Apply Subscriptions</button>
+            </div>
+        </div>
+
         <div class="tab-pane" id="tab-set-config"> <h3>group</h3></div>
     </div>
 </div>
