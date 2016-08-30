@@ -2,6 +2,7 @@ import {Routes, RouterModule } from '@angular/router';
 import { PolicyComponent}  from './policy.component';
 import { MainTabComponent} from './maintab.component';
 import { SubscriptionComponent} from './subscription.component';
+import { ApplySubscriptionComponent } from './appsub.component';
 
 
 const appRoutes: Routes = [
@@ -20,6 +21,10 @@ const appRoutes: Routes = [
 	{
 		path:'home',
 		component:MainTabComponent
+	},
+	{
+		path:'apply-sub',
+		component:ApplySubscriptionComponent
 	}
 ];
 

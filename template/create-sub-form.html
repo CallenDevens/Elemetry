@@ -1,7 +1,7 @@
 <div class="create-form form-container well well-lg" [style.display]="isDisplay?'block':'none'">
 
     <!--create policy group form, shows up on click create policy button-->
-    <!--attention: bootstrap does not working with 2-way data binding -->
+    <!--attention: bootstrap does not work with 2-way data binding -->
     <form class="form-inline " role="form">
        <div class="form-group">
             <label class="control-label">Name</label>
@@ -32,7 +32,7 @@
 
         <div class="form-group">
             <label class="control-label">Sensor Group</label>
-            <button  (click)="addNewPolicy()" type="button" class="btn btn-primary btn-xs"><i class="glyphicon glyphicon-plus"></i></button>
+            <button  (click)="addNewSensor()" type="button" class="btn btn-primary btn-xs"><i class="glyphicon glyphicon-plus"></i></button>
             <br>    
             <br/>
             <select #newSubSensor class = "form-control" style="width:120px;" >

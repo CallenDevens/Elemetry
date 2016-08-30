@@ -1,15 +1,13 @@
-<add-sensor-dialog></add-sensor-dialog>
     <div class="container" style="width:900px;" >
       <a href="home">
         <button class="btn btn-primary ">Home</button>
       </a>
-      <h3>Subscriptions</h3>
+      <h3>Apply Subscriptions</h3>
       <button (click) = "toggleSfComponent($event)" class="btn btn-primary btn-sm" style="float: right;" >Create Subscription&nbsp; &nbsp;
         <span class="glyphicon glyphicon-chevron-down"></span>
       </button>
-
-
-      <sub-form (onAddSensor)= "showCreateSensorDialog()"></sub-form>
+      
+      <sub-app-form></sub-app-form>
 
       <div id="subscription_table" style="background-color: white;clear:both; margin-top:10px;" class="well well-lg">
       <table class="table table-condensed table-hover">

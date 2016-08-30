@@ -1,11 +1,12 @@
 import { Component,AfterViewInit, ViewChild} from '@angular/core';
 import { Subscription } from './subscription';
 import { SubscriptionFormComponent } from './createsubscription.component';
+import { NewSensorDialogComponent } from './sensordialog.component';
 
 @Component({
     selector:'subscription',
     templateUrl:'./template/subscription-template.html',
-    directives:[SubscriptionFormComponent],
+    directives:[SubscriptionFormComponent,NewSensorDialogComponent],
     providers:[]
  })
 export class SubscriptionComponent implements AfterViewInit{
@@ -15,7 +16,13 @@ export class SubscriptionComponent implements AfterViewInit{
     @ViewChild(SubscriptionFormComponent)
     private sfComponent:SubscriptionFormComponent;
 
-  	showCreateSubDialog(){
+
+    @ViewChild(NewSensorDialogComponent)
+    private nsdComponent:NewSensorDialogComponent;
+
+
+  	showCreateSensorDialog(){
+        this.nsdComponent.showup();
 	  }
 
     getSubscriptions() {
@@ -37,7 +44,8 @@ export class SubscriptionComponent implements AfterViewInit{
 	}
 
 	ngAfterViewInit() {
-		this.getSubscriptions();
+      this.nsdComponent.closeDialog();
+		  this.getSubscriptions();
   }
 
   	/* update policy groups table after server-end data updated*/

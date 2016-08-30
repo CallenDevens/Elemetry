@@ -122,7 +122,7 @@ input:checked + .slider:before {
     margin-right: 15px;
 }
 
-.control-label + .btn-xs{
+.control-label + .btn-xs, .form-group .btn-xs{
     padding: 0px;
     width: 25px;
     height: 25px;
@@ -155,4 +155,9 @@ input:checked + .slider:before {
 
 .create-form {
     clear:both;
+}
+
+.form-group .router-list{
+    width:100px;
+    height: 150px;
 }

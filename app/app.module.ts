@@ -7,7 +7,7 @@ import { HttpModule, JsonpModule } from '@angular/http'
 import { AppComponent }  from './app.component';
 import { PolicyComponent }  from './policy.component';
 import { MainTabComponent } from './maintab.component';
-
+import { ApplySubscriptionComponent } from './appsub.component';
 
 import { routing,
          appRoutingProviders } from './app.routing';
@@ -24,7 +24,8 @@ import { routing,
   declarations: [ 
     AppComponent,
     PolicyComponent, 
-    MainTabComponent
+    MainTabComponent,
+    ApplySubscriptionComponent
     ],
   providers: [
     appRoutingProviders

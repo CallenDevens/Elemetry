@@ -11,7 +11,7 @@ export class SubscriptionFormComponent{
 	public isDisplay:boolean = false;
 
 	@Output() onUpdated = new EventEmitter();
-	@Output() onAddPolicy = new EventEmitter();
+	@Output() onAddSensor = new EventEmitter();
 
 	toggle(){
 		if(this.isDisplay == false){
@@ -20,6 +20,10 @@ export class SubscriptionFormComponent{
 		else if(this.isDisplay == true){
 			this.isDisplay = false;
 		}else{}
+	}
+
+	addNewSensor(){
+	    this.onAddSensor.emit();
 	}
 
 }

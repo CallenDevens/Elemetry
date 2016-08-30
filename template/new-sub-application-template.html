@@ -1,0 +1,32 @@
+<div class="create-form form-container well well-lg" [style.display]="isDisplay?'block':'none'">
+  <form class="form-inline">
+  <div class="form-group">
+    <label for="sel1">Routers: </label>
+     <button type="button" class="btn btn-primary btn-xs" ><i class="glyphicon glyphicon-plus"></i></button>
+    <br />
+    <select id="sel1" #unSelected class="form-control router-list" multiple>
+      <option *ngFor="let r of unSelectedRouters" >{{r}}</option>
+    </select>
+  </div>
+
+
+  <button (click)="addRouter()" >=》</button>
+  <button  (click)="resetRouter()">《=</button>
+
+  <div class="form-group">
+    <label for="sel2" >Selected</label>
+    <br />
+      <select id="sel2" #selected multiple="multiple" class="form-control router-list" >
+        <option *ngFor="let r of selectedRouters" >{{r}}</option>
+      </select>
+   </div>
+
+    <div class="form-group">
+    <label for="sel2" >Subscription</label><br/>
+      <select id="sel2" ="multiple" class="form-control router-list" >
+        <option *ngFor="let r of selectedRouters" >{{r}}</option>
+      </select>
+   </div>
+
+  </form>
+</div>
