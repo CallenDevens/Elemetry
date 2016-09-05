@@ -1,5 +1,6 @@
 import { Component,AfterViewInit, ViewChild} from '@angular/core';
 import { ApplicationFormComponent} from './createapplication.component';
+import { SubApplication } from './subapplication';
 @Component({
     selector:'apply-sub',
     templateUrl:'./template/apply-sub-template.html',
@@ -10,6 +11,11 @@ export class ApplySubscriptionComponent implements AfterViewInit{
 	 
    errorMessage: string;
    constructor () {}
+
+   //TODO use GET to ask for data
+   subapps: SubApplication[] = [new SubApplication(["R1","R2"], "SUB1", true),  
+       new SubApplication(["R1","R3"], "SUB2", false),
+       new SubApplication(["R4","R7"], "SUB3", true)];
 
 	togglePfComponent(event:any){
 		var target = event.target || event.srcElement || event.currentTarget;

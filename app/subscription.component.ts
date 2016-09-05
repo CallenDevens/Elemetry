@@ -22,7 +22,7 @@ export class SubscriptionComponent implements AfterViewInit{
     private cancelInnerHTML:string = "Cancel Creation &nbsp; &nbsp;<span class='glyphicon glyphicon-chevron-up'></span>";
 
     //inject services
-    construct(private subService:SubscriptionService){}
+    constructor(private subService:SubscriptionService){}
 
 
   	showCreateSensorDialog(){

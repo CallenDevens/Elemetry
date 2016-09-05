@@ -1,22 +1,25 @@
-import {Component, EventEmitter, Input, Output, ViewChild} from '@angular/core';
+import {Component, EventEmitter, Input, Output, ViewChild,AfterViewInit} from '@angular/core';
 
 @Component({
 	selector:'sub-app-form',
 	templateUrl:'./template/create-sub-application-form-template.html'
 })
-export class ApplicationFormComponent{
+export class ApplicationFormComponent implements AfterViewInit{
 
-	public isDisplay:boolean = true;
+	public isDisplay:boolean = true;  
 
 	@Output() onUpdated = new EventEmitter();
 	@Output() onAddPolicy = new EventEmitter();
 
-    constructor () {}
+  constructor () {}
 
-    @ViewChild('unSelected') unselectElRef:any;
-    @ViewChild('selected')   selectedElRef:any;
-    unSelectedRouters:string[] = ["R1","R2","R3","R4", "R5", "R6"];
-    selectedRouters:string[]  =new Array<string>() ;
+  @ViewChild('unSelected') unselectElRef:any;
+  @ViewChild('selected')   selectedElRef:any;
+
+  //TODO use .post to get routers
+  unSelectedRouters:string[] = ["R1","R2","R3","R4", "R5", "R6"];
+  selectedRouters:string[]  =new Array<string>() ;
+  subscriptions:stirng[] = ["sub1","sub2","sub3"];
 
 	toggle(){
 		if(this.isDisplay == false){
@@ -30,7 +33,6 @@ export class ApplicationFormComponent{
 	addNewApplication(){
 		this.onAddPolicy.emit();
 	}
-
 
    addRouter(){
        let options = this.unselectElRef.nativeElement.options;       

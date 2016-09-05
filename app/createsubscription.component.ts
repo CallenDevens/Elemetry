@@ -42,7 +42,7 @@ export class SubscriptionFormComponent{
 	setDefaultValue(name:string ,destGroup:string, sensorGroup:string, interval:number){
 	   /* set model */
 	   this.subscription.name = name;
-	   this.subscription.descriptionGroup = destGroup;
+	   this.subscription.destinationGroup = destGroup;
    	   this.subscription.sensorGroup = sensorGroup;
 	   this.subscription.interval = interval;
 
@@ -55,7 +55,7 @@ export class SubscriptionFormComponent{
        }
 
 
-       let options = this.senSelectElRef.nativeElement.options;       
+       options = this.senSelectElRef.nativeElement.options;       
        for(let i=0; i < options.length; i++) {
            if(options[i].value == sensorGroup) {          
                options[i].selected = true;

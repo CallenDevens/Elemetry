@@ -13,20 +13,30 @@
       <table class="table table-condensed table-hover">
         <thead>
         <tr>
-          <th>Name</th>
-          <th>Destination Group</th>
-          <th>Sensor Group</th>
-          <th>Interval</th>
-          <th>Edit</th>
+          <th>Routers</th>
+          <th>Subscirption</th>
+          <th>On/Off</th>
+          <th>Delete</th>
         </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let sub of subscriptions">
-            <td>{{sub.name}}</td>
-            <td>{{sub.destinationGroup}}</td>
-            <td>{{sub.sensorGroup}}</td>
-            <td>{{sub.interval}}</td>
-            <td>Pencil</td>
+          <tr *ngFor="let sa of subapps">
+            <td>{{sa.routerString}}</td>
+            <td>{{sa.subscription}}</td>
+            <td *ngIf="sa.on == true ">  
+              <label class="switch">
+                <input type="checkbox" checked />
+                <div class="slider"></div>
+              </label>
+            </td>
+            <td *ngIf="sa.on == false">  
+              <label class="switch">
+                <input type="checkbox"/>
+                <div class="slider"></div>
+              </label>
+            </td>
+
+            <td><span class="glyphicon glyphicon-trash"></span> </td>
           </tr>
       
       </tbody>

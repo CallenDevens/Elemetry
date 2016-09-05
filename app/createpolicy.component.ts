@@ -66,7 +66,7 @@ export class PolicyFormComponent implements AfterViewInit{
 	    this.toggle();
 	}
 
-	setDefaultValue(name,col, pol){
+	setDefaultValue(name:string,col:string, pol:string){
 	   /* set model */
 	   this.policygroup.name = name;
 	   this.policygroup.collector = col;
@@ -81,7 +81,7 @@ export class PolicyFormComponent implements AfterViewInit{
        }
 
 
-       let options = this.policySelectElRef.nativeElement.options;       
+       options = this.policySelectElRef.nativeElement.options;       
        for(let i=0; i < options.length; i++) {
            if(options[i].value == pol) {          
                options[i].selected = true;
