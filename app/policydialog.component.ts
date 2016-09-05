@@ -19,7 +19,9 @@ export class NewPolicyDialogComponent{
 		this.el.style.display = "none";
 	  }
 
-	  onSubmit(){
+	  onSubmit(name:string， description:string, comment:string, period:number){
+	  	if(!name || !description || !period){return;}
+
 	  	this.closeDialog();
 	  }
 }

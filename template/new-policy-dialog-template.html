@@ -4,10 +4,8 @@
     <span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
     <h4>New Policy</h4>
     <hr />
-
     <!--form -->
     <form class="form-inline " role="form">
-
         <!--policy name-->
         <div class="form-group">
             <label class="control-label">Name</label>
@@ -26,14 +24,14 @@
         <div class="form-group">
             <label class="control-label">Description</label>
             <br />
-            <input type="text" class="form-control" style="width:250px;" placeholder="Description" />
+            <input #newPolicyDescription required type="text" class="form-control" style="width:250px;" placeholder="Description" />
         </div>
         
         <div class="form-group">
             <label class="control-label">Comment</label>
             <br />
             <!--bind it to angular component -->
-            <input type="text" class="form-control" placeholder="Comment" style="width:250px;" />
+            <input #newPolicyComment type="text" class="form-control" placeholder="Comment" style="width:250px;" />
         </div>
 
         <br />
@@ -49,7 +47,7 @@
         <div class="form-group">
           <label class="control-label">Period</label>
           <br>     
-          <input type="number" class="form-control" style="width:80px;">
+          <input required #newPolicyPeriod type="number" class="form-control" style="width:80px;">
         </div>
 
         <br />
@@ -67,7 +65,7 @@
 
        <div class="form-group">
             <br />
-            <input type="button" class="form-control btn btn-primary" name="submit" value="Submit" />
+            <input type="submit" (click)="onSubmit(newPolicyName.value, newPolicyDescription.value, newPolicyComment.value,newPolicyPeriod.value)" class="form-control btn btn-primary" name="submit" value="Submit" />
         </div>
 
 </form>

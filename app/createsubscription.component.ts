@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, Output} from '@angular/core';
+import {Component, EventEmitter, Input, Output, ViewChild} from '@angular/core';
 import {Subscription} from './subscription';
 
 @Component({
@@ -8,7 +8,16 @@ import {Subscription} from './subscription';
 export class SubscriptionFormComponent{
 
 	subscription = new Subscription("","","",0);
+
+	//TODO initialize groups and sensors by back-end or services
+	public desGroups:string[] = ["group1","group2","group3", "group4"];
+	public senGroups :string[] = ["sensor1","sensor2","sensor3","sensor4"];
+
 	public isDisplay:boolean = false;
+
+
+    @ViewChild('newSubDest')   destSelectElRef:any;
+    @ViewChild('newSubSensor')   senSelectElRef:any;
 
 	@Output() onUpdated = new EventEmitter();
 	@Output() onAddSensor = new EventEmitter();
@@ -22,8 +31,38 @@ export class SubscriptionFormComponent{
 		}else{}
 	}
 
+	showup(){
+		this.isDisplay = true;
+	}
+
 	addNewSensor(){
 	    this.onAddSensor.emit();
+	}
+
+	setDefaultValue(name:string ,destGroup:string, sensorGroup:string, interval:number){
+	   /* set model */
+	   this.subscription.name = name;
+	   this.subscription.descriptionGroup = destGroup;
+   	   this.subscription.sensorGroup = sensorGroup;
+	   this.subscription.interval = interval;
+
+	   /* set selection */
+	   let options = this.destSelectElRef.nativeElement.options;       
+       for(let i=0; i < options.length; i++) {
+           if(options[i].value == destGroup) {          
+               options[i].selected = true;
+           }
+       }
+
+
+       let options = this.senSelectElRef.nativeElement.options;       
+       for(let i=0; i < options.length; i++) {
+           if(options[i].value == sensorGroup) {          
+               options[i].selected = true;
+           }
+       }
+
+
 	}
 
 }

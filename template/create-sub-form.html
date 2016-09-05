@@ -13,7 +13,7 @@
                     </span>
 
                     <!--bind with data model-->
-                    <input required #newSubName type="text" class="form-control" placeholder="Name"  aria-describedby="groupNameAddon" />
+                    <input required #newSubName type="text" class="form-control" placeholder="Name"  aria-describedby="groupNameAddon" value="{{subscription.name}}" />
             </div>
         </div>
 
@@ -23,10 +23,7 @@
                 <br>
                 <br />
                 <select #newSubDest class="form-control" style="width:150px;" >
-                    <option value="Group1">Group1</option>
-                    <option value="Group2">Group2</option>
-                    <option value="Group3">Group3</option>
-                    <option value="Group4">Group4</option>
+                     <option *ngFor="let s of desGroups">{{s}}</option>
                 </select>
         </div>
 
@@ -36,10 +33,7 @@
             <br>    
             <br/>
             <select #newSubSensor class = "form-control" style="width:120px;" >
-                <option>Sensor1</option>
-                <option>Sensor2</option>
-                <option>Sensor3</option>
-                <option>Sensor4</option>
+                <option *ngFor="let s of senGroups">{{s}}</option>
             </select>
         </div>
 
@@ -47,7 +41,7 @@
             <label class="control-label">Interval</label>
             <br>     
             <br />
-            <input type="number" class="form-control"  min="0"  style="width:60px;">
+            <input type="number" class="form-control"  min="0"  value="{{subscription.interval}}" style="width:60px;">
         </div>
 
         <div class="form-group">

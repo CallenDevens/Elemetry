@@ -13,7 +13,7 @@
                     </span>
 
                     <!--bind with data model-->
-                    <input required #newGroupName type="text" class="form-control" placeholder="Name"  aria-describedby="groupNameAddon" />
+                    <input required #newGroupName type="text" class="form-control" placeholder="Name"  aria-describedby="groupNameAddon" value="{{policygroup.name}}"/>
             </div>
         </div>
 
@@ -23,10 +23,7 @@
                 <br>
                 <br />
                 <select #newGroupCol class="form-control" style="width:120px;" >
-                    <option value="Collector1">Collector1</option>
-                    <option value="Collector2">Collector2</option>
-                    <option value="Collector3">Collector3</option>
-                    <option value="Collector4">Collector4</option>
+                    <option *ngFor="let col of collectors">{{col}}</option>
                 </select>
         </div>
 
@@ -36,10 +33,7 @@
             <br>    
             <br/>
             <select #newGroupPol class = "form-control" style="width:120px;" >
-                <option>Policy1</option>
-                <option>Policy2</option>
-                <option>Policy3</option>
-                <option>Policy4</option>
+                 <option *ngFor="let pol of policies">{{pol}}</option>
             </select>
         </div>
         

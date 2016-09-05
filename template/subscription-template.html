@@ -4,7 +4,7 @@
         <button class="btn btn-primary ">Home</button>
       </a>
       <h3>Subscriptions</h3>
-      <button (click) = "toggleSfComponent($event)" class="btn btn-primary btn-sm" style="float: right;" >Create Subscription&nbsp; &nbsp;
+      <button #createButton (click) = "toggleSfComponent($event)" class="btn btn-primary btn-sm" style="float: right;" >Create Subscription&nbsp; &nbsp;
         <span class="glyphicon glyphicon-chevron-down"></span>
       </button>
 
@@ -28,7 +28,7 @@
             <td>{{sub.destinationGroup}}</td>
             <td>{{sub.sensorGroup}}</td>
             <td>{{sub.interval}}</td>
-            <td>Pencil</td>
+            <td><span (click)="onEdit(sub.name, sub.destinationGroup, sub.sensorGroup, sub.interval)" class="glyphicon glyphicon-pencil"></span></td>
           </tr>
       
       </tbody>
